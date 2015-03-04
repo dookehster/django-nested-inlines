@@ -323,9 +323,9 @@
 
 	// This return the maximum amount of forms in the given formset
 	function get_max_forms(formset_prefix) {
-		var max_forms = $("#id_" + formset_prefix + "-MAX_NUM_FORMS").attr("autocomplete", "off").val();
+		var max_forms = $("input[name='" + formset_prefix + "-MAX_NUM_FORMS']:last").attr("autocomplete", "off").val();
 		if ( typeof max_forms == 'undefined' || max_forms == '') {
-			return '';
+			return 1000;
 		}
 		return parseInt(max_forms);
 	};
